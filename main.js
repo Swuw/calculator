@@ -1,29 +1,15 @@
 
 
 function displaySymbol(symb) {
-    let display = document.getElementsByClassName('symb')[0];
-    display.innerHTML = symb;
-    return display
+    let displaySymbol = document.getElementsByClassName('symb')[0];
+    displaySymbol.innerHTML = symb;
+    return displaySymbol
 }
 
 function displayMem(mem) {
-    let display = document.getElementsByClassName('mem')[0];
-    display.innerHTML =mem;
-    return display
-}
-
-function infoMem() {
-    let infoMem = document.getElementsByClassName('mem')[0].innerHTML;
-    return infoMem
-}
-
-function infoSymbol() {
-    let infoSymbol = document.getElementsByClassName('symb')[0].innerHTML;
-    return infoSymbol
-}
-function approvedSymb (symbol) {
-    let symbolMark = symbolKey?.[symbol];
-    return displaySymbol(symbolMark)
+    let displayMem = document.getElementsByClassName('mem')[0];
+    displayMem.innerHTML =mem;
+    return displayMem
 }
 
 function display(txt) {
@@ -32,13 +18,23 @@ function display(txt) {
     return display
 }
 
+function infoSymbol() {
+    let infoSymbol = document.getElementsByClassName('symb')[0].innerHTML;
+    return infoSymbol
+}
+
 function infoDisplay() {
     let infoDisplay = document.getElementsByClassName('txt')[0].innerHTML;
     return infoDisplay
 }
 
+function approvedSymb (symbol) {
+    let symbolMark = symbolKey?.[symbol];
+    return displaySymbol(symbolMark)
+}
+
 function castling () {
-    memory.a =memory.b;
+    memory.a =memory.c;
  return memory.a;
 }
 
@@ -46,8 +42,13 @@ function memoryA (mem) {
     memory.b = parseInt(mem);
     console.log(memory.b);
     displayMem(memory.b);
-    return memory.b
+    return [
+        memory.b,
+
+        ]
 }
+
+
 
 function calculation (symbol){
     let res = base?.[symbol];
@@ -58,8 +59,9 @@ function calculation (symbol){
     return [
 
         display(res(a,b)),
+        displayMem(res(a,b)),
         console.log(res(a,b)),
-
+        memory.c = res(a,b),
     ]
 }
 
@@ -68,15 +70,14 @@ let base = {
     minus: (a, b) => a - b,
     divide: (a, b) => a / b,
     multiply: (a, b) => a * b,
-    // equally: (a, b) => a === b,
+    equally: ,
 }
 
 let memory = {
  a: 0,
  b: 0,
+ c: 0,
 }
-
-
 
 let symbolKey = {
     plus: '+',
@@ -121,13 +122,14 @@ for (let act of buttonAction) {
 function action() {
     let symbol = document.querySelector('.numeric').value= this.value;
     return [
+
         castling (),
 
-        // delNumb(),
         memoryA (infoDisplay()),
+
         approvedSymb (symbol),
         calculation (symbol),
-
+        delNumb(),
     ]
 }
 
