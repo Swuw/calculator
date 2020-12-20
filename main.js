@@ -1,51 +1,3 @@
-// document.getElementsByClassName('one').onclick = function () {
-//     console.log("Click")
-// }
-// console.dir(document.getElementsByClassName('one'))
-// one.onclick = function push() {
-//     console.log("Click")
-//
-// }
-
-// let buttonNumb = document.querySelectorAll(".number");
-// console.dir(buttonNumb)
-// for (let i = 0; i < buttonNumb.length; i++) { buttonNumb.onclick = function () {
-//     console.log('Click')
-// } }
-// let mem ='';
-//
-//
-// function write(numb) {
-//     console.dir('hi');
-//     mem = numb + mem;
-//     console.dir(mem);
-//     console.dir(numb);
-//     return mem;
-// }
-//
-// // function getAtr() {
-// //     let getAtr = document.querySelector('.numeric').value;
-// //     return getAtr;
-// //     console.dir(getAtr);
-// //     console.dir('атрибут');
-// // }
-//
-//
-// let push = function () {
-//
-//     // let getAtr = numeric.value;
-//     // write(getAtr);
-//     console.dir('клик');
-//     // console.dir(x);
-//     // console.dir(write(x));
-// }
-//
-// let buttonNumb = document.querySelectorAll('.numeric');
-// for ( let numeric of buttonNumb) {
-//     numeric.onclick = push;
-// }
-//
-//
 
 function displaySymbol(symb) {
     let display = document.getElementsByClassName('symb')[0];
@@ -143,7 +95,6 @@ for (let act of buttonAction) {
 function action() {
     let symbol = document.querySelector('.numeric').value= this.value;
     return [
-        // displaySymbol(symbol),
         approvedSymb (symbol),
         memoryA (infoDisplay()),
         delNumb(),
@@ -156,75 +107,4 @@ function action() {
 
 
 
-// function calculation(symbol){
-//
-//     let value1 = Number(infoDisplay())
-//     let value2 = Number(infoMem())
-//     if (infoSymbol() === '=') {
-//         del();
-//     } else {
-//         if (symbol === '+') {
-//             let calc = value1 + value2;
-//             return [
-//                 displaySymbol ('+'),
-//                 displayMem(calc),
-//                 delNumb(),
-//             ]} else if (symbol === '-') {
-//             if (infoMem() === ' ') {
-//                 let calc = value1;
-//                 return [
-//                     displaySymbol ('-'),
-//                     displayMem(calc),
-//                     delNumb()
-//                 ]} else {
-//                 let calc = value2 - value1;
-//                 return [
-//                     displaySymbol ('-'),
-//                     displayMem(calc),
-//                     delNumb()]
-//             }
-//         } else if (symbol === '*') {
-//             if (infoMem() === ' ') {
-//                 let calc = value1;
-//                 return [
-//                     displaySymbol('*'),
-//                     displayMem(calc),
-//                     delNumb()]
-//             } else {
-//                 let calc = value2 * value1;
-//                 return [
-//                     displaySymbol('*'),
-//                     displayMem(calc),
-//                     delNumb()]
-//             }
-//         } else if (symbol === '/') {
-//             if (infoMem() === ' ') {
-//                 let calc = value1;
-//                 return [
-//                     displaySymbol('/'),
-//                     displayMem(calc),
-//                     delNumb()]
-//             } else if (infoMem() === 0) {
-//                 let calc = 0;
-//                 return [
-//                     displaySymbol('/'),
-//                     displayMem(calc),
-//                     delNumb()]
-//             }
-//             else {
-//                 let calc = value2 / value1;
-//                 return [
-//                     displaySymbol('/'),
-//                     displayMem(calc),
-//                     delNumb()]
-//             }}
-//         else if (symbol === '=') {
-//             equally();
-//             return [
-//                 displaySymbol('='),
-//                 display(infoMem())]
-//         }
-//     }
-//
-// }
-//
+
