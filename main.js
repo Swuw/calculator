@@ -1,4 +1,5 @@
 
+
 function displaySymbol(symb) {
     let display = document.getElementsByClassName('symb')[0];
     display.innerHTML = symb;
@@ -25,9 +26,9 @@ function approvedSymb (symbol) {
     return displaySymbol(symbolMark)
 }
 
-function display(a) {
+function display(txt) {
     let display = document.getElementsByClassName('txt')[0];
-    display.innerHTML = a;
+    display.innerHTML = txt;
     return display
 }
 
@@ -36,11 +37,30 @@ function infoDisplay() {
     return infoDisplay
 }
 
+function castling () {
+    memory.a =memory.b;
+ return memory.a;
+}
+
 function memoryA (mem) {
-    let a = parseInt(mem);
-    console.log(a);
-    displayMem(a);
-    return a
+    memory.b = parseInt(mem);
+    console.log(memory.b);
+    displayMem(memory.b);
+    return memory.b
+}
+
+function calculation (symbol){
+    let res = base?.[symbol];
+    let b = memory.b;
+    let a = memory.a;
+    console.log('a= ', a);
+    console.log('b= ', b);
+    return [
+
+        display(res(a,b)),
+        console.log(res(a,b)),
+
+    ]
 }
 
 let base = {
@@ -48,8 +68,14 @@ let base = {
     minus: (a, b) => a - b,
     divide: (a, b) => a / b,
     multiply: (a, b) => a * b,
-    equally: (a, b) => a * b,
+    // equally: (a, b) => a === b,
 }
+
+let memory = {
+ a: 0,
+ b: 0,
+}
+
 
 
 let symbolKey = {
@@ -95,9 +121,12 @@ for (let act of buttonAction) {
 function action() {
     let symbol = document.querySelector('.numeric').value= this.value;
     return [
-        approvedSymb (symbol),
+        castling (),
+
+        // delNumb(),
         memoryA (infoDisplay()),
-        delNumb(),
+        approvedSymb (symbol),
+        calculation (symbol),
 
     ]
 }
