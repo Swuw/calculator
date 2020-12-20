@@ -44,11 +44,20 @@ function memoryA (mem) {
     displayMem(memory.b);
     return [
         memory.b,
-
         ]
 }
 
-
+function del(){
+    let bNum = '0';
+    memory.a = 0;
+    memory.b = 0;
+    let d= '';
+    return [
+        display(bNum),
+        displayMem(d),
+        displaySymbol(d),
+    ]
+}
 
 function calculation (symbol){
     let res = base?.[symbol];
@@ -57,7 +66,6 @@ function calculation (symbol){
     console.log('a= ', a);
     console.log('b= ', b);
     return [
-
         display(res(a,b)),
         displayMem(res(a,b)),
         console.log(res(a,b)),
@@ -70,7 +78,8 @@ let base = {
     minus: (a, b) => a - b,
     divide: (a, b) => a / b,
     multiply: (a, b) => a * b,
-    equally: ,
+    delete : del(),
+    equally: memory.c,
 }
 
 let memory = {
@@ -85,6 +94,7 @@ let symbolKey = {
     divide: '/',
     multiply: '*',
     equally: '=',
+    delete: ' ',
 }
 
 function delNumb(){
@@ -122,20 +132,25 @@ for (let act of buttonAction) {
 function action() {
     let symbol = document.querySelector('.numeric').value= this.value;
     return [
-
         castling (),
-
         memoryA (infoDisplay()),
-
         approvedSymb (symbol),
         calculation (symbol),
         delNumb(),
     ]
 }
 
-
-
-
-
+// let actionBottonFinal = document.querySelectorAll('.actionBotton');
+// for (let actbtn of actionBottonFinal) {
+//     actbtn.addEventListener('click', finalAction);
+// }
+//
+// function finalAction() {
+//     let symbolFinal = document.querySelector('.actionBotton').value= this.value;
+//     return [
+//         approvedSymb (symbolFinal),
+//
+//     ]
+// }
 
 
