@@ -62,14 +62,14 @@ function del(){
     ]
 }
 
-function equally() {
-    let a = parseInt(infoMem());
-    let b = parseInt(infoDisplay());
-    let reslt = base?.[infoSymbol()];
-    return [
-        display(reslt(a, b)),
-    ]
-}
+// function equally() {
+//     let a = parseInt(infoMem());
+//     let b = parseInt(infoDisplay());
+//     let finalReslt = base?.[infoSymbol()];
+//     return [
+//         display(finalReslt(a, b)),
+//     ]
+// }
 
 function calculation (symbol){
     let res = base?.[symbol];
@@ -85,10 +85,10 @@ function calculation (symbol){
     ]
 }
 
-function finalAction2 (symbol2) {
-    let res2 = base2?.[symbol2];
-    return  display(res2)
-}
+// function finalAction2 (symbol2) {
+//     let res2 = base2?.[symbol2];
+//     return  display(res2)
+// }
 
 let base = {
     plus: (a, b) => a + b,
@@ -101,7 +101,7 @@ let base = {
 let base2 = {
 
     delete : del(),
-    equally: equally(),
+    // equally: equally(),
 }
 
 let memory = {
@@ -162,15 +162,15 @@ function action() {
     ]
 }
 
-let buttonAction2 = document.querySelectorAll('.action2');
-for (let act2 of buttonAction2) {
-    act2.addEventListener('click', action2);
-}
-
-function action2() {
-    let symbol2 = document.querySelector('.action2').value = this.value;
-    return [
-        approvedSymb (symbol2),
-        finalAction2 (symbol2),
-    ]
-}
+// let buttonAction2 = document.querySelectorAll('.action2');
+// for (let act2 of buttonAction2) {
+//     act2.addEventListener('click', action2);
+// }
+//
+// function action2() {
+//     let symbol2 = document.querySelector('.action2').value = this.value;
+//     return [
+//         approvedSymb (symbol2),
+//         finalAction2 (symbol2),
+//     ]
+// }
