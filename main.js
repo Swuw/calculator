@@ -31,11 +31,6 @@ function infoMem() {
     return infoMem
 }
 
-function approvedSymb (symbol) {
-    let symbolMark = symbolKey?.[symbol];
-    return displaySymbol(symbolMark)
-}
-
 function castling () {
     memory.a =memory.c;
  return memory.a;
@@ -62,14 +57,16 @@ function del(){
     ]
 }
 
-// function equally() {
-//     let a = parseInt(infoMem());
-//     let b = parseInt(infoDisplay());
-//     let finalReslt = base?.[infoSymbol()];
-//     return [
-//         display(finalReslt(a, b)),
-//     ]
-// }
+function equally() {
+    let a = parseInt(infoMem());
+    let b = parseInt(infoDisplay());
+    let finalReslt = base?.[infoSymbol()];
+    console.log(finalReslt)
+    return [
+        console.log(finalReslt),
+        display(finalReslt(a,b)),
+    ]
+}
 
 function calculation (symbol){
     let res = base?.[symbol];
@@ -85,38 +82,28 @@ function calculation (symbol){
     ]
 }
 
-// function finalAction2 (symbol2) {
-//     let res2 = base2?.[symbol2];
-//     return  display(res2)
-// }
-
-let base = {
-    plus: (a, b) => a + b,
-    minus: (a, b) => a - b,
-    divide: (a, b) => a / b,
-    multiply: (a, b) => a * b,
-
+function finalAction2 (symbol2) {
+    let res2 = baseTwo?.[symbol2];
+    return  display(res2)
 }
 
-let base2 = {
 
-    delete : del(),
-    // equally: equally(),
+let base = {
+    "+": (a, b) => a + b,
+    "-": (a, b) => a - b,
+    "/": (a, b) => a / b,
+    "*": (a, b) => a * b,
+}
+
+let baseTwo = {
+    del : del(),
+    "=": equally(),
 }
 
 let memory = {
  a: 0,
  b: 0,
  c: 0,
-}
-
-let symbolKey = {
-    plus: '+',
-    minus: '-',
-    divide: '/',
-    multiply: '*',
-    equally: '=',
-    delete: ' ',
 }
 
 function delNumb(){
@@ -156,21 +143,23 @@ function action() {
     return [
         castling (),
         memoryA (infoDisplay()),
-        approvedSymb (symbol),
+        displaySymbol(symbol),
         calculation (symbol),
         delNumb(),
     ]
 }
 
-// let buttonAction2 = document.querySelectorAll('.action2');
-// for (let act2 of buttonAction2) {
-//     act2.addEventListener('click', action2);
-// }
-//
-// function action2() {
-//     let symbol2 = document.querySelector('.action2').value = this.value;
-//     return [
-//         approvedSymb (symbol2),
-//         finalAction2 (symbol2),
-//     ]
-// }
+let buttonAction2 = document.querySelectorAll('.action2');
+for (let act2 of buttonAction2) {
+    act2.addEventListener('click', action2);
+}
+
+function action2() {
+    let symbol2 = document.querySelector('.action2').value = this.value;
+    return [
+
+        finalAction2 (symbol2),
+
+        displaySymbol(symbol2),
+    ]
+}
