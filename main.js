@@ -65,7 +65,7 @@ function del(){
 function equally() {
     let a = parseInt(infoMem());
     let b = parseInt(infoDisplay());
-    let reslt = base2?.[infoSymbol()];
+    let reslt = base?.[infoSymbol()];
     return [
         display(reslt(a, b)),
     ]
